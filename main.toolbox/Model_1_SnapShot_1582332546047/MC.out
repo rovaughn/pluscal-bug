@@ -1,0 +1,173 @@
+@!@!@STARTMSG 2262:0 @!@!@
+TLC2 Version 2.14 of 10 July 2019
+@!@!@ENDMSG 2262 @!@!@
+@!@!@STARTMSG 2187:0 @!@!@
+Running breadth-first search Model-Checking with fp 118 and seed 968476833939704003 with 8 workers on 16 cores with 1214MB heap and 2730MB offheap memory [pid: 71766] (Mac OS X 10.15.3 x86_64, AdoptOpenJDK 11.0.3 x86_64, OffHeapDiskFPSet, DiskStateQueue).
+@!@!@ENDMSG 2187 @!@!@
+@!@!@STARTMSG 2220:0 @!@!@
+Starting SANY...
+@!@!@ENDMSG 2220 @!@!@
+Parsing file /Users/alec/pluscal-bug/main.toolbox/Model_1/MC.tla
+Parsing file /Users/alec/pluscal-bug/main.toolbox/Model_1/main.tla
+Parsing file /Applications/TLA+ Toolbox.app/Contents/Eclipse/plugins/org.lamport.tlatools_1.0.0.201907102009/tla2sany/StandardModules/TLC.tla
+Parsing file /Applications/TLA+ Toolbox.app/Contents/Eclipse/plugins/org.lamport.tlatools_1.0.0.201907102009/tla2sany/StandardModules/FiniteSets.tla
+Parsing file /Applications/TLA+ Toolbox.app/Contents/Eclipse/plugins/org.lamport.tlatools_1.0.0.201907102009/tla2sany/StandardModules/Integers.tla
+Parsing file /Applications/TLA+ Toolbox.app/Contents/Eclipse/plugins/org.lamport.tlatools_1.0.0.201907102009/tla2sany/StandardModules/Sequences.tla
+Parsing file /Applications/TLA+ Toolbox.app/Contents/Eclipse/plugins/org.lamport.tlatools_1.0.0.201907102009/tla2sany/StandardModules/Naturals.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module Integers
+Semantic processing of module main
+Semantic processing of module MC
+@!@!@STARTMSG 2219:0 @!@!@
+SANY finished.
+@!@!@ENDMSG 2219 @!@!@
+@!@!@STARTMSG 2185:0 @!@!@
+Starting... (2020-02-21 17:49:04)
+@!@!@ENDMSG 2185 @!@!@
+@!@!@STARTMSG 2212:0 @!@!@
+Implied-temporal checking--satisfiability problem has 1 branches.
+@!@!@ENDMSG 2212 @!@!@
+@!@!@STARTMSG 2189:0 @!@!@
+Computing initial states...
+@!@!@ENDMSG 2189 @!@!@
+@!@!@STARTMSG 2190:0 @!@!@
+Finished computing initial states: 1 distinct state generated at 2020-02-21 17:49:04.
+@!@!@ENDMSG 2190 @!@!@
+@!@!@STARTMSG 2114:1 @!@!@
+Deadlock reached.
+@!@!@ENDMSG 2114 @!@!@
+@!@!@STARTMSG 2121:1 @!@!@
+The behavior up to this point is:
+@!@!@ENDMSG 2121 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+1: <Initial predicate>
+/\ stack = [process2 |-> <<>>, process1 |-> <<>>]
+/\ called = [process2 |-> FALSE, process1 |-> FALSE]
+/\ pc = [process2 |-> "TestProcess2", process1 |-> "TestProcess2_"]
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+2: <TestProcess2_ line 54, col 18 to line 59, col 36 of module main>
+/\ stack = [ process2 |-> <<>>,
+  process1 |-> <<[pc |-> "Done", procedure |-> "test_procedure"]>> ]
+/\ called = [process2 |-> FALSE, process1 |-> FALSE]
+/\ pc = [process2 |-> "TestProcess2", process1 |-> "TestProcedure"]
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+3: <TestProcess2 line 63, col 17 to line 68, col 35 of module main>
+/\ stack = [ process2 |-> <<[pc |-> "Done", procedure |-> "test_procedure"]>>,
+  process1 |-> <<[pc |-> "Done", procedure |-> "test_procedure"]>> ]
+/\ called = [process2 |-> FALSE, process1 |-> FALSE]
+/\ pc = [process2 |-> "TestProcedure", process1 |-> "TestProcedure"]
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+4: <TestProcedure line 47, col 24 to line 50, col 40 of module main>
+/\ stack = [ process2 |-> <<[pc |-> "Done", procedure |-> "test_procedure"]>>,
+  process1 |-> <<[pc |-> "Done", procedure |-> "test_procedure"]>> ]
+/\ called = [process2 |-> TRUE, process1 |-> FALSE]
+/\ pc = [process2 |-> "Error", process1 |-> "TestProcedure"]
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+5: <TestProcedure line 47, col 24 to line 50, col 40 of module main>
+/\ stack = [ process2 |-> <<[pc |-> "Done", procedure |-> "test_procedure"]>>,
+  process1 |-> <<[pc |-> "Done", procedure |-> "test_procedure"]>> ]
+/\ called = [process2 |-> TRUE, process1 |-> TRUE]
+/\ pc = [process2 |-> "Error", process1 |-> "Error"]
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2201:0 @!@!@
+The coverage statistics at 2020-02-21 17:49:04
+@!@!@ENDMSG 2201 @!@!@
+@!@!@STARTMSG 2773:0 @!@!@
+<Init line 41, col 1 to line 41, col 4 of module main>: 2:2
+@!@!@ENDMSG 2773 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 42, col 9 to line 45, col 79 of module main: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<TestProcedure line 47, col 1 to line 47, col 19 of module main>: 4:8
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 47, col 27 to line 47, col 52 of module main: 29
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 47, col 27 to line 47, col 34 of module main: 21
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 48, col 27 to line 48, col 66 of module main: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 49, col 27 to line 49, col 61 of module main: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 50, col 27 to line 50, col 40 of module main: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<TestProcess2_ line 54, col 1 to line 54, col 13 of module main>: 1:4
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 54, col 21 to line 54, col 52 of module main: 17
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 54, col 21 to line 54, col 34 of module main: 13
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 55, col 21 to line 57, col 81 of module main: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 58, col 21 to line 58, col 69 of module main: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 59, col 21 to line 59, col 36 of module main: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<TestProcess2 line 63, col 1 to line 63, col 12 of module main>: 3:4
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 63, col 20 to line 63, col 50 of module main: 16
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 63, col 20 to line 63, col 33 of module main: 12
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 64, col 20 to line 66, col 80 of module main: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 67, col 20 to line 67, col 68 of module main: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 68, col 20 to line 68, col 35 of module main: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<Terminating line 73, col 1 to line 73, col 11 of module main>: 0:0
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 73, col 19 to line 73, col 56 of module main: 9
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 74, col 19 to line 74, col 32 of module main: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2202:0 @!@!@
+End of statistics.
+@!@!@ENDMSG 2202 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(5) at 2020-02-21 17:49:04: 13 states generated (1,027 s/min), 9 distinct states found (711 ds/min), 0 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2199:0 @!@!@
+13 states generated, 9 distinct states found, 0 states left on queue.
+@!@!@ENDMSG 2199 @!@!@
+@!@!@STARTMSG 2194:0 @!@!@
+The depth of the complete state graph search is 5.
+@!@!@ENDMSG 2194 @!@!@
+@!@!@STARTMSG 2268:0 @!@!@
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 2 and the 95th percentile is 2).
+@!@!@ENDMSG 2268 @!@!@
+@!@!@STARTMSG 2186:0 @!@!@
+Finished in 762ms at (2020-02-21 17:49:04)
+@!@!@ENDMSG 2186 @!@!@
