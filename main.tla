@@ -15,7 +15,8 @@ macro test_macro() begin
     call test_procedure();
 end macro;
 
-\* test_procedure marks called[self] as TRUE so we can verify if this procedure ever runs for each process.
+\* test_procedure marks called[self] as TRUE so we can verify if this procedure
+\* ever runs for each process.
 procedure test_procedure() begin
     TestProcedure:
         called[self] := TRUE;
@@ -24,7 +25,7 @@ end procedure;
 
 \* process1 is a fair process that calls test_procedure via macro.
 fair process process1 = "process1" begin
-    TestProcess2: test_macro();
+    TestProcess1: test_macro();
 end process;
 
 \* process2 is a fair process that calls test_procedure directly.
@@ -34,7 +35,6 @@ end process;
 
 end algorithm; *)
 \* BEGIN TRANSLATION
-\* Label TestProcess2 of process process1 at line 15 col 5 changed to TestProcess2_
 VARIABLES called, pc, stack
 
 (* define statement *)
@@ -48,7 +48,7 @@ ProcSet == {"process1"} \cup {"process2"}
 Init == (* Global variables *)
         /\ called = [process1 |-> FALSE, process2 |-> FALSE]
         /\ stack = [self \in ProcSet |-> << >>]
-        /\ pc = [self \in ProcSet |-> CASE self = "process1" -> "TestProcess2_"
+        /\ pc = [self \in ProcSet |-> CASE self = "process1" -> "TestProcess1"
                                         [] self = "process2" -> "TestProcess2"]
 
 TestProcedure(self) == /\ pc[self] = "TestProcedure"
@@ -58,14 +58,14 @@ TestProcedure(self) == /\ pc[self] = "TestProcedure"
 
 test_procedure(self) == TestProcedure(self)
 
-TestProcess2_ == /\ pc["process1"] = "TestProcess2_"
-                 /\ stack' = [stack EXCEPT !["process1"] = << [ procedure |->  "test_procedure",
-                                                                pc        |->  "Done" ] >>
-                                                            \o stack["process1"]]
-                 /\ pc' = [pc EXCEPT !["process1"] = "TestProcedure"]
-                 /\ UNCHANGED called
+TestProcess1 == /\ pc["process1"] = "TestProcess1"
+                /\ stack' = [stack EXCEPT !["process1"] = << [ procedure |->  "test_procedure",
+                                                               pc        |->  "Done" ] >>
+                                                           \o stack["process1"]]
+                /\ pc' = [pc EXCEPT !["process1"] = "TestProcedure"]
+                /\ UNCHANGED called
 
-process1 == TestProcess2_
+process1 == TestProcess1
 
 TestProcess2 == /\ pc["process2"] = "TestProcess2"
                 /\ stack' = [stack EXCEPT !["process2"] = << [ procedure |->  "test_procedure",
@@ -94,5 +94,5 @@ Termination == <>(\A self \in ProcSet: pc[self] = "Done")
 
 =============================================================================
 \* Modification History
-\* Last modified Fri Feb 21 17:52:46 MST 2020 by alec
+\* Last modified Fri Feb 21 17:59:52 MST 2020 by alec
 \* Created Fri Feb 21 17:42:58 MST 2020 by alec

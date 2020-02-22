@@ -2,7 +2,7 @@
 TLC2 Version 2.14 of 10 July 2019
 @!@!@ENDMSG 2262 @!@!@
 @!@!@STARTMSG 2187:0 @!@!@
-Running breadth-first search Model-Checking with fp 9 and seed -8950010635754492789 with 8 workers on 16 cores with 1214MB heap and 2730MB offheap memory [pid: 71780] (Mac OS X 10.15.3 x86_64, AdoptOpenJDK 11.0.3 x86_64, OffHeapDiskFPSet, DiskStateQueue).
+Running breadth-first search Model-Checking with fp 62 and seed 8064454173439629088 with 8 workers on 16 cores with 1214MB heap and 2730MB offheap memory [pid: 71870] (Mac OS X 10.15.3 x86_64, AdoptOpenJDK 11.0.3 x86_64, OffHeapDiskFPSet, DiskStateQueue).
 @!@!@ENDMSG 2187 @!@!@
 @!@!@STARTMSG 2220:0 @!@!@
 Starting SANY...
@@ -25,7 +25,7 @@ Semantic processing of module MC
 SANY finished.
 @!@!@ENDMSG 2219 @!@!@
 @!@!@STARTMSG 2185:0 @!@!@
-Starting... (2020-02-21 17:52:48)
+Starting... (2020-02-21 17:59:57)
 @!@!@ENDMSG 2185 @!@!@
 @!@!@STARTMSG 2212:0 @!@!@
 Implied-temporal checking--satisfiability problem has 1 branches.
@@ -34,13 +34,13 @@ Implied-temporal checking--satisfiability problem has 1 branches.
 Computing initial states...
 @!@!@ENDMSG 2189 @!@!@
 @!@!@STARTMSG 2190:0 @!@!@
-Finished computing initial states: 1 distinct state generated at 2020-02-21 17:52:49.
+Finished computing initial states: 1 distinct state generated at 2020-02-21 17:59:58.
 @!@!@ENDMSG 2190 @!@!@
 @!@!@STARTMSG 2200:0 @!@!@
-Progress(5) at 2020-02-21 17:52:49: 14 states generated, 9 distinct states found, 0 states left on queue.
+Progress(5) at 2020-02-21 17:59:58: 14 states generated, 9 distinct states found, 0 states left on queue.
 @!@!@ENDMSG 2200 @!@!@
 @!@!@STARTMSG 2192:0 @!@!@
-Checking temporal properties for the complete state space with 9 total distinct states at (2020-02-21 17:52:49)
+Checking temporal properties for the complete state space with 9 total distinct states at (2020-02-21 17:59:58)
 @!@!@ENDMSG 2192 @!@!@
 @!@!@STARTMSG 2116:1 @!@!@
 Temporal properties were violated.
@@ -54,11 +54,11 @@ The following behavior constitutes a counter-example:
 1: <Initial predicate>
 /\ stack = [process1 |-> <<>>, process2 |-> <<>>]
 /\ called = [process1 |-> FALSE, process2 |-> FALSE]
-/\ pc = [process1 |-> "TestProcess2_", process2 |-> "TestProcess2"]
+/\ pc = [process1 |-> "TestProcess1", process2 |-> "TestProcess2"]
 
 @!@!@ENDMSG 2217 @!@!@
 @!@!@STARTMSG 2217:4 @!@!@
-2: <TestProcess2_ line 61, col 18 to line 66, col 36 of module main>
+2: <TestProcess1 line 60, col 17 to line 65, col 35 of module main>
 /\ stack = [ process1 |-> <<[pc |-> "Done", procedure |-> "test_procedure"]>>,
   process2 |-> <<>> ]
 /\ called = [process1 |-> FALSE, process2 |-> FALSE]
@@ -66,7 +66,7 @@ The following behavior constitutes a counter-example:
 
 @!@!@ENDMSG 2217 @!@!@
 @!@!@STARTMSG 2217:4 @!@!@
-3: <TestProcess2 line 70, col 17 to line 75, col 35 of module main>
+3: <TestProcess2 line 69, col 17 to line 74, col 35 of module main>
 /\ stack = [ process1 |-> <<[pc |-> "Done", procedure |-> "test_procedure"]>>,
   process2 |-> <<[pc |-> "Done", procedure |-> "test_procedure"]>> ]
 /\ called = [process1 |-> FALSE, process2 |-> FALSE]
@@ -74,7 +74,7 @@ The following behavior constitutes a counter-example:
 
 @!@!@ENDMSG 2217 @!@!@
 @!@!@STARTMSG 2217:4 @!@!@
-4: <TestProcedure line 54, col 24 to line 57, col 77 of module main>
+4: <TestProcedure line 53, col 24 to line 56, col 77 of module main>
 /\ stack = [ process1 |-> <<[pc |-> "Done", procedure |-> "test_procedure"]>>,
   process2 |-> <<>> ]
 /\ called = [process1 |-> FALSE, process2 |-> TRUE]
@@ -85,95 +85,95 @@ The following behavior constitutes a counter-example:
 5: Stuttering
 @!@!@ENDMSG 2218 @!@!@
 @!@!@STARTMSG 2267:0 @!@!@
-Finished checking temporal properties in 00s at 2020-02-21 17:52:49
+Finished checking temporal properties in 00s at 2020-02-21 17:59:58
 @!@!@ENDMSG 2267 @!@!@
 @!@!@STARTMSG 2201:0 @!@!@
-The coverage statistics at 2020-02-21 17:52:49
+The coverage statistics at 2020-02-21 17:59:58
 @!@!@ENDMSG 2201 @!@!@
 @!@!@STARTMSG 2773:0 @!@!@
-<Init line 48, col 1 to line 48, col 4 of module main>: 2:2
+<Init line 47, col 1 to line 47, col 4 of module main>: 2:2
 @!@!@ENDMSG 2773 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 49, col 9 to line 52, col 79 of module main: 2
+  line 48, col 9 to line 51, col 79 of module main: 2
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<TestProcedure line 54, col 1 to line 54, col 19 of module main>: 5:8
+<TestProcedure line 53, col 1 to line 53, col 19 of module main>: 4:8
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 54, col 27 to line 54, col 52 of module main: 28
+  line 53, col 27 to line 53, col 52 of module main: 28
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 54, col 27 to line 54, col 34 of module main: 20
+  |line 53, col 27 to line 53, col 34 of module main: 20
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 55, col 27 to line 55, col 66 of module main: 8
+  line 54, col 27 to line 54, col 66 of module main: 8
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 56, col 27 to line 56, col 74 of module main: 8
+  line 55, col 27 to line 55, col 74 of module main: 8
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 57, col 27 to line 57, col 77 of module main: 8
+  line 56, col 27 to line 56, col 77 of module main: 8
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<TestProcess2_ line 61, col 1 to line 61, col 13 of module main>: 1:4
+<TestProcess1 line 60, col 1 to line 60, col 12 of module main>: 2:4
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 61, col 21 to line 61, col 52 of module main: 16
+  line 60, col 20 to line 60, col 50 of module main: 16
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 61, col 21 to line 61, col 34 of module main: 12
+  |line 60, col 20 to line 60, col 33 of module main: 12
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 62, col 21 to line 64, col 81 of module main: 4
+  line 61, col 20 to line 63, col 80 of module main: 4
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 65, col 21 to line 65, col 69 of module main: 4
+  line 64, col 20 to line 64, col 68 of module main: 4
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 66, col 21 to line 66, col 36 of module main: 4
+  line 65, col 20 to line 65, col 35 of module main: 4
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<TestProcess2 line 70, col 1 to line 70, col 12 of module main>: 2:4
+<TestProcess2 line 69, col 1 to line 69, col 12 of module main>: 2:4
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 70, col 20 to line 70, col 50 of module main: 15
+  line 69, col 20 to line 69, col 50 of module main: 15
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 70, col 20 to line 70, col 33 of module main: 11
+  |line 69, col 20 to line 69, col 33 of module main: 11
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 71, col 20 to line 73, col 80 of module main: 4
+  line 70, col 20 to line 72, col 80 of module main: 4
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 74, col 20 to line 74, col 68 of module main: 4
+  line 73, col 20 to line 73, col 68 of module main: 4
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 75, col 20 to line 75, col 35 of module main: 4
+  line 74, col 20 to line 74, col 35 of module main: 4
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<Terminating line 80, col 1 to line 80, col 11 of module main>: 0:1
+<Terminating line 79, col 1 to line 79, col 11 of module main>: 0:1
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 80, col 40 to line 80, col 56 of module main: 14
+  line 79, col 40 to line 79, col 56 of module main: 14
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 80, col 40 to line 80, col 47 of module main: 12
+  |line 79, col 40 to line 79, col 47 of module main: 12
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 80, col 31 to line 80, col 37 of module main: 9
+  line 79, col 31 to line 79, col 37 of module main: 9
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 81, col 19 to line 81, col 32 of module main: 1
+  line 80, col 19 to line 80, col 32 of module main: 1
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2202:0 @!@!@
 End of statistics.
 @!@!@ENDMSG 2202 @!@!@
 @!@!@STARTMSG 2200:0 @!@!@
-Progress(5) at 2020-02-21 17:52:49: 14 states generated (834 s/min), 9 distinct states found (536 ds/min), 0 states left on queue.
+Progress(5) at 2020-02-21 17:59:58: 14 states generated (512 s/min), 9 distinct states found (329 ds/min), 0 states left on queue.
 @!@!@ENDMSG 2200 @!@!@
 @!@!@STARTMSG 2199:0 @!@!@
 14 states generated, 9 distinct states found, 0 states left on queue.
 @!@!@ENDMSG 2199 @!@!@
 @!@!@STARTMSG 2186:0 @!@!@
-Finished in 1010ms at (2020-02-21 17:52:49)
+Finished in 1643ms at (2020-02-21 17:59:58)
 @!@!@ENDMSG 2186 @!@!@
